@@ -71,3 +71,9 @@ ts file -htmlfile or visversa
             -2- $Event binding- (eventname)="method($event)" -value of events access when event happens
             -3-Event binding with template rendering variable =#varname
 
+(2)-Two way binding
+-------------------
+
+2.1-ngModel  -[(ngModel)]="variable"
+      -FormsModule -module uesd for ngModel method
+

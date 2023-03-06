@@ -27,19 +27,19 @@
             <div class="col-lg-8 mt-5 ps-5">
                 <form action="">
                     <div class="col-lg-10">
-                        <input #acno type="text" [placeholder]="d2" class="inp p-2 w-75 mt-3"
+                        <input [(ngModel)]="acno" type="text" [placeholder]="d2" class="inp p-2 w-75 mt-3"
                             id="un1" name="uname">
                     </div>
 
 
                     <div class="col-lg-10">
-                        <input #pw type="password" placeholder="Enter the Password"
+                        <input [(ngModel)]="psword" type="password" placeholder="Enter the Password"
                             class="inp p-2 w-75 mt-3" id="psw" name="pword">
                     </div>
 
 
                     <div class="col-lg-10">
-                        <button class="btn btn-primary p-2 mt-3" (click)="login(acno,pw)">Login</button>
+                        <button class="btn btn-primary p-2 mt-3" (click)="login()">Login</button>
                     </div>
 
                 </form>
