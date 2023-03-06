@@ -1,0 +1,72 @@
+Angular
+-------
+npm-node package manager
+ -> npm -v
+
+install
+ ->npm i -g @angular/cli@latest        ng v(checking)
+
+project creation
+    ->ng new projectname
+
+running command
+  ->ng serve --open             ng s -open(shortcut to open)
+
+Angular tectnologies
+ -html(content loading)
+ -css
+ -typescript(dynamic)
+
+typescript: super set of js
+difference- define types for variables ie, typescript is stricty typed language , js dynamic
+            eg: num:number (after this)-(num=8)
+                num:string
+                num:any(don't know type of data)
+
+                transpiling: proccess to convert ts to js while running
+                ------------
+typescript running engine is not available---at runningtime typescript code convert into javascript code and run- don by browser
+-better than js(depending on type of data)
+
+
+
+creating angular project
+-root module
+  -rootcomponent(parent component)
+    -we can create sub component inside the root module
+  -sub module 
+     -component
+     ..........etc....
+
+
+Module -ts file called modules-collection of components-used to manage components under module.
+component-page -(ts-logic,css-style and html-content files) component create
+       - selector -to display component -by calling selector 
+
+  
+
+working Cylce of angular component
+---------------------------------
+
+constructor -->ngOnInit() -->other methods(user define)
+
+
+dom methods form data access not work in angular
+
+Data Binging in Angular
+-----------------------
+->ts- component
+->html-view
+
+(1)-One-way binding(one direction)
+-------------------
+ts file -htmlfile or visversa
+--(1.1)-ts to html(component to view sharing):
+
+           -1-String interpolation -symbol- {}-(for string shareing) ={{data}}
+           -2-Property Binding -[propertyname]="data"  
+
+--(1.2)-html-ts(view-component):
+            -1-Event Binding- (eventname)="method()" //just happens
+            -2- $Event binding- (eventname)="method($event)" -value of events access when event happens
+
