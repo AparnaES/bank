@@ -69,4 +69,5 @@ ts file -htmlfile or visversa
 --(1.2)-html-ts(view-component):
             -1-Event Binding- (eventname)="method()" //just happens
             -2- $Event binding- (eventname)="method($event)" -value of events access when event happens
+            -3-Event binding with template rendering variable =#varname
 
