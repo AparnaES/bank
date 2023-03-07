@@ -77,3 +77,40 @@ ts file -htmlfile or visversa
 2.1-ngModel  -[(ngModel)]="variable"
       -FormsModule -module uesd for ngModel method
 
+
+path setting
+------------
+
+-path set in - rootmodule routing file.
+-Each page need different paths
+-landing page paths is empty-localhost/4200(landing page has no path)
+-
+
+
+
+Redirection in Angular
+----------------------
+
+method is - navigateByUrl(path)
+class of method -Router
+Module of class -AppRoutingModule
+
+(folder-file-class-methods
+package-module-class )
+
+
+-Dependency Injection
+----------------------
+To use a method of class in another class we use this method.
+ -method applied on constructors
+             syntax-access specifier reference:classname
+
+
+        {-access specifiers - private,public
+          -if public -the method can be used by all class in file where Dependency Injection performed.
+          -if private -the method can only in injected class not in other class i file.
+        }
+           
+
+
+
