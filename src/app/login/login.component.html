@@ -14,12 +14,12 @@
 
 </form> -->
 <div>
-    <h4 class="text-white pb-5 ms-5">
+    <h4 class=" pb-5 ms-5">
         {{data}}
 
     </h4>
 </div>
-<div class="login">
+<!-- <div class="login">
     <div class="container">
         <div class="row text-center">
             <h1>Sign In</h1>
@@ -27,8 +27,8 @@
             <div class="col-lg-8 mt-5 ps-5">
                 <form action="">
                     <div class="col-lg-10">
-                        <input [(ngModel)]="acno" type="text" [placeholder]="d2" class="inp p-2 w-75 mt-3"
-                            id="un1" name="uname">
+                        <input [(ngModel)]="acno" type="text" [placeholder]="d2" class="inp p-2 w-75 mt-3" id="un1"
+                            name="uname">
                     </div>
 
 
@@ -41,10 +41,37 @@
                     <div class="col-lg-10">
                         <button class="btn btn-primary p-2 mt-3" (click)="login()">Login</button>
                     </div>
-<p class="text-white">Don't have Account? <a href="register" style="color:aqua;" >Create Account</a></p>
+                    <p class="text-white">Don't have Account? <a href="register" style="color:aqua;">Create Account</a>
+                    </p>
                 </form>
             </div>
             <div class="col-lg-2"></div>
         </div>
+    </div>
+</div> -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <h1 class="text-center text-white">Sign In</h1>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 text-center p-5" id="logform">
+                    <form action="">
+                        <input [(ngModel)]="acno" type="text" [placeholder]="d2" class="inp p-2  mt-3 form-control"
+                            id="un1" name="uname">
+                        <input [(ngModel)]="psword" type="password" placeholder="Enter the Password"
+                            class="inp p-2  mt-3 form-control" id="psw" name="pword">
+                        <button class="btn  text-white p-2 mt-3" (click)="login()" type="submit">Login</button>
+                        <p class="text-white mt-3">Don't have Account? <a href="register">Create
+                                Account</a>
+
+                    </form>
+                </div>
+                <div class="col-lg-2"></div>
+
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
     </div>
 </div>

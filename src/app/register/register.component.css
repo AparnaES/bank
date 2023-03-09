@@ -1,0 +1,19 @@
+#regform{
+    border-radius: 50px;
+    background: transparent;
+    border: #f8ae0d 2px solid;
+    /* background: linear-gradient(#62b8f5,#4475ef); */
+
+}
+#btn{
+    outline: none;
+    border: none;
+    background: #f8ae0d;
+}
+input{
+    background: transparent;
+    border-color: #f8ae0d;
+}
+input::placeholder{
+    color: #f8ae0d;
+}

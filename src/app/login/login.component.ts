@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ServicedataService } from '../Servicefolder/servicedata.service';
 
 @Component({
   selector: 'app-login',
@@ -11,34 +12,34 @@ export class LoginComponent {
   d2="Enter Ac Number"
   acno:any
   psword:any
-  userDetails:any = {
-    1000: { username: "anu", acno: 1000, password: "abc123", balance: 0 },
-    1001: { username: "manu", acno: 1001, password: "def123", balance: 0 }, 
-    1002: { username: "jinu", acno: 1002, password: "ghi123", balance: 0 },
-    1003: { username: "sanu", acno: 1003, password: "jkl123", balance:0 }
+  // userDetails:any = {
+  //   1000: { username: "anu", acno: 1000, password: "abc123", balance: 0 },
+  //   1001: { username: "manu", acno: 1001, password: "def123", balance: 0 }, 
+  //   1002: { username: "jinu", acno: 1002, password: "ghi123", balance: 0 },
+  //   1003: { username: "sanu", acno: 1003, password: "jkl123", balance:0 }
 
-  }
-  constructor(private rout:Router){
+  // }
+  constructor(private rout:Router,private ds:ServicedataService ){
 
   }
   login(){
     var acnum=this.acno
     var psw=this.psword
-    var userdata=this.userDetails
+    var userdata=this.ds.userDetails
+    const result=this.ds.login(acnum,psw)
     // alert("login succes")
-    if (acnum in userdata) {
-      if (psw == userdata[acnum]["password"]) {
-        alert("Login success")
-        //redirection
-        this.rout.navigateByUrl("dashboard")
-      } else {
-        alert("Incorrect Password!")
-      }
-    } else {
-      alert('Incorrect Account number!')
-    }
+    if (result) {
+      alert("Login success")
+      this.rout.navigateByUrl("dashboard")
 
-  }
+    } else {
+      alert("Incorrect Account number! OR Incorrect Password!")
+    }
+        //redirection
+      } 
+
+  
+
 //   // acnoChange(event:any){
 //   //   this.acno=event.target.value
     

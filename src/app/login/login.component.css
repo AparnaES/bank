@@ -26,3 +26,24 @@
     -webkit-box-shadow: -1px 1px 30px -10px rgba(0, 0, 0, 0.76);
     -moz-box-shadow: -1px 0px 30px -10px rgba(0, 0, 0, 0.76);
 } */
+
+#logform{
+    border: 2px #f8ae0d solid;
+    border-radius: 50px;
+}
+a{
+    color: rgb(241, 200, 14);
+}
+input::placeholder{
+    color: #f8ae0d;
+}
+input{
+    border-color: #f8ae0d;
+    background: transparent;
+}
+button{
+    background: #f8ae0d;
+}
+h4{
+    color: #f8ae0d;
+}

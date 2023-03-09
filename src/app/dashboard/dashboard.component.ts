@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServicedataService } from '../Servicefolder/servicedata.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  user: any
+  constructor(private ds: ServicedataService) {
+    this.user = this.ds.currentUser
+  }
 
 }

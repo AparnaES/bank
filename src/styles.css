@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-    background-image: url('./assets/bimg1.jpg');
+    background-image: url('./assets/back2.jpg');
     background-size: cover;
 }
 header{
     height: 50px;
-    background-color:#62b8f5;
+    background-color:#f8ae0d;
     /* background-color:#4475ef; */
 
 }
@@ -15,6 +15,6 @@ footer{
     bottom: 0;
     width: 100%;
     /* background-color: #4475ef; */
-    background-color:#62b8f5;
+    background-color:#f8ae0d;
 
 }

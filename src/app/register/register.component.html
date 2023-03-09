@@ -1,1 +1,21 @@
 <p class="text-white">register works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <h1 class="text-center text-white">Sign Up</h1>
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 text-center  p-5 " id="regform">
+                    <input type="text" [(ngModel)]="un" class="form-control mt-3" name="username" id="uname" placeholder="Enter name of A/C Holder ">
+                    <input type="text" [(ngModel)]="ac" class="form-control mt-3" name="Accountnum" id="acnumber" placeholder="Enter the account number">
+                    <input type="password" [(ngModel)]="ps" class="form-control mt-3" name="userpassword" id="upassword" placeholder="Enter the Password">
+                    <!-- <input type="text" class="form-control mt-3" name="userbalnce" id="balance" placeholder="Enter the Balance"> -->
+                    <button type="button" (click)="register()" class="btn text-white mt-5" id="btn">Register</button>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>

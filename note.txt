@@ -111,6 +111,9 @@ To use a method of class in another class we use this method.
           -if private -the method can only in injected class not in other class i file.
         }
            
-
-
+Angular Service
+--------------
+Its  a file in angular
+All copmonent can access the content of service file.
+command used: ng g s filename
 

@@ -1,0 +1,25 @@
+h4{
+    color: #f8ae0d;
+}
+input{
+    background: transparent;
+    border-color: #f8ae0d;
+}
+input::placeholder{
+    color: #f8ae0d;
+}
+#btn{
+    outline: none;
+    border: none;
+    background: #f8ae0d;
+}
+#depoform{
+    border-radius: 50px;
+    background: transparent;
+    border: #f8ae0d 2px solid;
+}
+#wdform{
+    border-radius: 50px;
+    background: transparent;
+    border: #f8ae0d 2px solid;
+}
