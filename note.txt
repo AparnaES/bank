@@ -117,3 +117,44 @@ Its  a file in angular
 All copmonent can access the content of service file.
 command used: ng g s filename
 
+
+Angular Directives
+---------------------
+(data from array to html file)
+
+-used to manupulate the DOM 
+-1-Component Directive-creating component structureof dom chaneges
+
+-2-Structural Directives-(array or object data access,then structure changes).change the structureof dom by array or object.
+   
+   -*ngFor-
+
+Form validation in Angular
+-------------------------------
+
+-form can be created in two ways
+
+   -template driven form
+   -model driven form
+
+ Model drivenform creation
+ 
+  1-reactive form
+  - module used to create reactive model form- 
+                Module - ReactiveFormsModel
+                class - FormBuilder
+  -a model contains 
+              -form group
+              - array
+              - controller
+
+  
+
+
+
+
+
+
+
+
+

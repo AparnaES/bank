@@ -23,3 +23,11 @@ input::placeholder{
     background: transparent;
     border: #f8ae0d 2px solid;
 }
+a{
+color: #f8ae0d;
+/* text-decoration-line: none; */
+    /* background-color: blue; */
+}
+h5{
+    color: #ffffff;
+}
