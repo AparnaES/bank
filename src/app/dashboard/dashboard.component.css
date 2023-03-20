@@ -31,3 +31,13 @@ color: #f8ae0d;
 h5{
     color: #ffffff;
 }
+#btn2{
+    outline: none;
+    border: none;
+    background: #f8ae0d;
+    margin-left: 90%;
+    /* margin-left: px; */
+}
+p{
+    color: #f8ae0d;
+}

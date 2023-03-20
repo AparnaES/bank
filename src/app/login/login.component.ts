@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServicedataService } from '../Servicefolder/servicedata.service';
 
@@ -10,8 +11,7 @@ import { ServicedataService } from '../Servicefolder/servicedata.service';
 export class LoginComponent {
   data="Perfect banking Partner"
   d2="Enter Ac Number"
-  acno:any
-  psword:any
+
   // userDetails:any = {
   //   1000: { username: "anu", acno: 1000, password: "abc123", balance: 0 },
   //   1001: { username: "manu", acno: 1001, password: "def123", balance: 0 }, 
@@ -19,22 +19,30 @@ export class LoginComponent {
   //   1003: { username: "sanu", acno: 1003, password: "jkl123", balance:0 }
 
   // }
-  constructor(private rout:Router,private ds:ServicedataService ){
-
+  constructor(private rout:Router,private ds:ServicedataService,private fb:FormBuilder ){
   }
+  loginForm=this.fb.group({
+    acno:['',[Validators.required,Validators.pattern('[0-9]+')]],
+   psword:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]]
+  })
   login(){
-    var acnum=this.acno
-    var psw=this.psword
-    var userdata=this.ds.userDetails
-    const result=this.ds.login(acnum,psw)
-    // alert("login succes")
-    if (result) {
-      alert("Login success")
-      this.rout.navigateByUrl("dashboard")
-
+    var acnum=this.loginForm.value.acno
+    var psw=this.loginForm.value.psword
+    // var userdata=this.ds.userDetails
+    if (this.loginForm.valid) {
+      const result=this.ds.login(acnum,psw)
+      // alert("login succes")
+      if (result) {
+        alert("Login success")
+        this.rout.navigateByUrl("dashboard")
+  
+      } else {
+        alert("Incorrect Account number! OR Incorrect Password!")
+      }
     } else {
-      alert("Incorrect Account number! OR Incorrect Password!")
+      alert("Invalid form")
     }
+   
         //redirection
       } 
 

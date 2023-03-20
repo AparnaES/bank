@@ -57,11 +57,17 @@
                 <h1 class="text-center text-white">Sign In</h1>
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8 text-center p-5" id="logform">
-                    <form action="">
-                        <input [(ngModel)]="acno" type="text" [placeholder]="d2" class="inp p-2  mt-3 form-control"
-                            id="un1" name="uname">
-                        <input [(ngModel)]="psword" type="password" placeholder="Enter the Password"
+                    <form action="" [formGroup] ="loginForm">
+                        <input formControlName="acno" type="text" [placeholder]="d2" class="inp p-2  mt-3 form-control"
+                            id="acn1" name="ac1">
+                            <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched">
+                                <p>Include numbers only</p>
+                            </div>
+                        <input formControlName="psword" type="password" placeholder="Enter the Password"
                             class="inp p-2  mt-3 form-control" id="psw" name="pword">
+                            <div *ngIf="this.loginForm.get('psword')?.errors && this.loginForm.get('psword')?.touched">
+                                <p>Include charactor or numbers only</p>
+                            </div>
                         <button class="btn  text-white p-2 mt-3" (click)="login()" type="submit">Login</button>
                         <p class="text-white mt-3">Don't have Account? <a href="register">Create
                                 Account</a>

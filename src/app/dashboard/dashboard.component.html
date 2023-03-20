@@ -1,13 +1,29 @@
+<div class="text-center">
+    <h5>{{cdate | date:"medium"}}</h5>
+</div>
 <h4 class=" pb-2 ms-5">Welcome {{user}}</h4>
-<h5 class="text-center pb-2">Click here to <a routerLink="/transaction">ViewTransaction</a></h5>
+<button type="submit" (click)="deleteAcc()"  class="btn text-white mt-2 " id="btn">Delete</button>
+<button id="btn2" class="btn text-white" type="button" (click)="logout()" >Logout</button>
+<app-delete [item]="acno"></app-delete>
+<h5 [ngClass]="acno?'s1':''" class="text-center pb-2">Click here to <a routerLink="/transaction">ViewTransaction</a></h5>
 <div class="container">
-    <div class="row">
+    <div class="row" [ngClass]="acno?'s1':''">
         <div class="col-lg-5 text-center p-5" id="depoform">
             <h1>Deposit Form</h1>
-            <form action="">
-                <input type="text" [(ngModel)]="acnum" placeholder="Enter Account Number" id="acnum" name="useracnum" class="form-control mt-3">
-                <input type="password" [(ngModel)]="pwd" placeholder="Enter the Password" id="pwd" name="userpsw" class="form-control mt-3">
-                <input type="text" [(ngModel)]="dpamt" placeholder="Enter the Amount" id="dpamt" name="depoamt" class="form-control mt-3">
+            <form action="" [formGroup]="depositForm">
+                <input type="text"  formControlName="acno" placeholder="Enter Account Number" id="acnum" name="useracnum" class="form-control mt-3">
+                <div *ngIf="this.depositForm.get('acno')?.errors && this.depositForm.get('acno')?.touched">
+                    <p>Include numbers only</p>
+                </div>
+                <input type="password" formControlName="pwd"  placeholder="Enter the Password" id="pwd" name="userpsw" class="form-control mt-3">
+                <div *ngIf="this.depositForm.get('pwd')?.errors && this.depositForm.get('pwd')?.touched">
+                    <p>Include charactor or numbers only</p>
+                </div>
+                
+                <input type="text" formControlName="damt"  placeholder="Enter the Amount" id="dpamt" name="depoamt" class="form-control mt-3">
+                <div *ngIf="this.depositForm.get('damt')?.errors && this.depositForm.get('damt')?.touched">
+                    <p>Include numbers only</p>
+                </div>
                 <button type="submit" (click)="deposit()" class="btn text-white mt-4 mb-3" id="btn">Deposit</button>
             </form>
 
@@ -15,10 +31,19 @@
         <div class="col-lg-2"></div>
         <div class="col-lg-5 text-center p-5" id="wdform">
             <h1>Withdrawel Form</h1>
-            <form action="">
-                <input type="text" [(ngModel)]="acnum2"  placeholder="Enter Account Number" id="accno" name="uacnum" class="form-control mt-3">
-                <input type="password" [(ngModel)]="pwd2" placeholder="Enter the Password" id="passwd" name="upsw" class="form-control mt-3">
-                <input type="text" [(ngModel)]="wamt"  placeholder="Enter the Amount" id="wdamt" name="wdwlamt" class="form-control mt-3">
+            <form action="" [formGroup]="withdrawForm">
+                <input type="text" formControlName="acno2"   placeholder="Enter Account Number" id="accno" name="uacnum" class="form-control mt-3">
+                <div *ngIf="this.withdrawForm.get('acno2')?.errors && this.withdrawForm.get('acno2')?.touched">
+                    <p>Include numbers only</p>
+                </div>
+                <input type="password" formControlName="pwd2"  placeholder="Enter the Password" id="passwd" name="upsw" class="form-control mt-3">
+                <div *ngIf="this.withdrawForm.get('pwd2')?.errors && this.withdrawForm.get('pwd2')?.touched">
+                    <p>Include charactor or numbers only</p>
+                </div>
+                <input type="text"  formControlName="wamt"  placeholder="Enter the Amount" id="wdamt" name="wdwlamt" class="form-control mt-3">
+                <div *ngIf="this.withdrawForm.get('wamt')?.errors && this.withdrawForm.get('wamt')?.touched">
+                    <p>Include numbers only</p>
+                </div>
                 <button type="submit" (click)="Withdraw()" class="btn text-white mt-4 mb-3" id="btn">Withdraw</button>
             </form>
 

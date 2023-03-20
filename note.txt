@@ -118,7 +118,7 @@ All copmonent can access the content of service file.
 command used: ng g s filename
 
 
-Angular Directives
+Angular Directives dom manupulate
 ---------------------
 (data from array to html file)
 
@@ -127,7 +127,11 @@ Angular Directives
 
 -2-Structural Directives-(array or object data access,then structure changes).change the structureof dom by array or object.
    
-   -*ngFor-
+   -*ngFor-loop in html form
+   -*ngIf- condition in html form
+
+-3-Attribute Directives-control Attributes 
+       -[ngClass]
 
 Form validation in Angular
 -------------------------------
@@ -148,11 +152,36 @@ Form validation in Angular
               - array
               - controller
 
+
+Local Storage in Angular
+------------------------
+
+->CRUD 
+->Create :localstorage.setItem()
+->Read :localstorage.getItem()
+->Update:localstorage.setItem()
+->Delete:localstorage.removeItem()
   
+child parent communication in Angular
+---------------------------------------
+
+       parent to child data sharing
+      -----------------------------
+
+           ->syntax @Input() var:string|undefined -variable initialisation
+           ->@Input- decorator used in parent to child data shareing
 
 
 
+current date and time in Angular
+-------------------------------
 
+-Date : class used to access current date and time in angular.
+
+Angular pipes
+------------
+
+-used to convert datas into another format.
 
 
 
