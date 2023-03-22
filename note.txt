@@ -170,6 +170,10 @@ child parent communication in Angular
 
            ->syntax @Input() var:string|undefined -variable initialisation
            ->@Input- decorator used in parent to child data shareing
+      child to parent data sharing
+      -----------------------------
+           ->
+           ->
 
 
 
@@ -182,6 +186,41 @@ Angular pipes
 ------------
 
 -used to convert datas into another format.
+
+Event creation in Angular
+-------------------------
+two type of events:
+-inbuild event 
+-userdefined event:-
+    -EventEmitter:- class used to create events.
+        
+              syntax:[@input/output decorator()] eventname=new classname() // event creation
+
+    -emit():-method to specify when the event happens.
+             
+             syntax: this.eventname.emit()
+
+
+
+
+
+BACKEND
+------
+node used to create 
+Serverexpress frame
+Server creation
+---------------
+
+
+
+
+
+
+
+
+
+
+
 
 
 

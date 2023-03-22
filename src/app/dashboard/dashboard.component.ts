@@ -85,6 +85,10 @@ export class DashboardComponent implements OnInit {
   deleteAcc(){
     this.acno=JSON.parse(localStorage.getItem("currentAcnum") || "") 
   }
+  cancelChild(){
+    this.acno=""
+
+  }
 
 
 }
