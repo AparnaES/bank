@@ -211,7 +211,36 @@ Serverexpress frame
 Server creation
 ---------------
 
+integration forntend to BACKEND
+API creation in Angular
+-----------------------
+HttpClientModule - module for generateing api calls
+HttpClient  - class 
 
+methods in HttpClient
+---------------------
+get
+post
+put
+patch
+delete
+
+asynchronous  in js 
+-------------------
+                -then()
+     promise 
+                -catch()
+asynchronous  in ts 
+-------------------
+=>rxjs(reative extension for js)-library
+   observable      -subscribe()  -resloved
+                   -catch()   -rejected
+
+
+Headers creation in Angular
+--------------------------
+
+HttpHeaders- class used to generate Headers.use headers as reference
 
 
 

@@ -6,3 +6,7 @@
 h1{
    color: #f8ae0d; 
 }
+td{
+    border-right: #f8ae0d 2px solid;
+    width: 50%;
+}

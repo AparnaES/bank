@@ -4,7 +4,7 @@
 <h4 class=" pb-2 ms-5">Welcome {{user}}</h4>
 <button type="submit" (click)="deleteAcc()" class="btn text-white mt-2 " id="btn">Delete</button>
 <button id="btn2" class="btn text-white" type="button" (click)="logout()">Logout</button>
-<app-delete (onCancel)="cancelChild()" [item]="acno"></app-delete>
+<app-delete (ondelete)="ondeleteAcc($event)" (onCancel)="cancelChild()" [item]="acno"></app-delete>
 <h5 [ngClass]="acno?'s1':''" class="text-center pb-2">Click here to <a routerLink="/transaction">ViewTransaction</a>
 </h5>
 <div class="container">

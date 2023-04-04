@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -19,34 +20,44 @@ export class LoginComponent {
   //   1003: { username: "sanu", acno: 1003, password: "jkl123", balance:0 }
 
   // }
-  constructor(private rout:Router,private ds:ServicedataService,private fb:FormBuilder ){
+  constructor(private rout:Router,private ds:ServicedataService,private fb:FormBuilder,private http:HttpClient ){
   }
   loginForm=this.fb.group({
     acno:['',[Validators.required,Validators.pattern('[0-9]+')]],
-   psword:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]]
+   psword:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]]    // special characters not included
   })
   login(){
-    var acnum=this.loginForm.value.acno
+    var acno=this.loginForm.value.acno
     var psw=this.loginForm.value.psword
     // var userdata=this.ds.userDetails
     if (this.loginForm.valid) {
-      const result=this.ds.login(acnum,psw)
-      // alert("login succes")
-      if (result) {
-        alert("Login success")
-        this.rout.navigateByUrl("dashboard")
-  
-      } else {
-        alert("Incorrect Account number! OR Incorrect Password!")
-      }
+      this.ds.login(acno,psw).subscribe((result:any)=>
+      {
+        localStorage.setItem("currentUser",result.currentUser)
+        localStorage.setItem("currentAcnum",JSON.stringify(result.currentAcnum))
+        localStorage.setItem("token",JSON.stringify(result.token) )
+        alert(result.message)
+        this.rout.navigateByUrl("dashboard")  //redirection
+      },
+      result=>{
+        alert(result.error.message)
+        
+      })    
     } else {
       alert("Invalid form")
     }
    
-        //redirection
+        
       } 
 
+    }  
+      // if (result) {
+      //   alert("Login success")
+      //   this.rout.navigateByUrl("dashboard")
   
+      // } else {
+      //   alert("Incorrect Account number! OR Incorrect Password!")
+      // }
 
 //   // acnoChange(event:any){
 //   //   this.acno=event.target.value
@@ -73,4 +84,4 @@ export class LoginComponent {
 //   }
 
 // }
-}
+

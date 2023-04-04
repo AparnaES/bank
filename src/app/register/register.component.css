@@ -17,3 +17,6 @@ input{
 input::placeholder{
     color: #f8ae0d;
 }
+p{
+    color: red;
+}

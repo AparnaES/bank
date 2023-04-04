@@ -19,20 +19,32 @@ export class RegisterComponent {
     uname:['',[Validators.required,Validators.pattern('[a-zA-Z]+')]]
   })
   register() {
-var ac=this.registerForm.value.acno
-var ps=this.registerForm.value.pswd
-var un=this.registerForm.value.uname
+var acno=this.registerForm.value.acno
+var psw=this.registerForm.value.pswd
+var uname=this.registerForm.value.uname
 if (this.registerForm.valid) {
-  const result =this.ds.register(ac,un,ps)
-if (result) {
-  alert("Registration Successfull")
-  this.rout.navigateByUrl("")  //loginpage
-} else {
-  alert("User already present")
+  this.ds.register(acno,uname,psw).subscribe((result:any)=>{
+    alert(result.message)
+    this.rout.navigateByUrl("")  //loginpage
+
+  },
+  result=>{
+    alert(result.error.message)
+  }
+  )
 }
-} else {
-  alert("Invalid Form")
-}
+else {
+    alert("Invalid Form")
+  }
+// if (result) {
+//   alert("Registration Successfull")
+//   this.rout.navigateByUrl("")  //loginpage
+// } else {
+//   alert("User already present")
+// }
+// } else {
+//   alert("Invalid Form")
+// }
 
   }
 }

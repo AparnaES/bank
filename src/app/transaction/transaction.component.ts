@@ -9,7 +9,10 @@ import { ServicedataService } from '../Servicefolder/servicedata.service';
 export class TransactionComponent {
   transArray: any
   constructor(private ds: ServicedataService) {
-    this.transArray = this.ds.getTransaction(this.ds.currentAcnum)
+    this.ds.getTransaction(JSON.parse(localStorage.getItem("currentAcnum") || "")).subscribe(
+      (result:any)=>{
+      this.transArray=result.transaction
+    })
     console.log(this.transArray);
     
   }
